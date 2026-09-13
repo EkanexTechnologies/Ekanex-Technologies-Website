@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ekanextechnologies.github.io/Ekanex-Technologies-Website/sitemap.xml
