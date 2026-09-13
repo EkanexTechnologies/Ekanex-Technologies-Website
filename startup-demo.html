@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Build. Scale. Grow. | Ekanex Technologies</title>
+
+    <meta name="description"
+        content="Build. Scale. Grow. is a modern startup landing page concept created by Ekanex Technologies.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #09090b;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(9, 9, 11, 0.95);
+            border-bottom: 1px solid #27272a;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #a3e635;
+        }
+
+        nav a {
+            color: #d4d4d8;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #a3e635;
+        }
+
+        .hero {
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            padding: 100px 8%;
+            background:
+                radial-gradient(circle at 80% 20%, #365314 0, transparent 25%),
+                radial-gradient(circle at 20% 80%, #164e63 0, transparent 25%),
+                #09090b;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 14px;
+            border: 1px solid #3f6212;
+            border-radius: 30px;
+            color: #bef264;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 9vw, 110px);
+            line-height: 0.95;
+            margin: 25px 0;
+            letter-spacing: -5px;
+        }
+
+        .hero h1 span {
+            color: #a3e635;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #a1a1aa;
+            font-size: 19px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #a3e635;
+            color: #172554;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            background: #bef264;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-label {
+            color: #a3e635;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            margin: 12px 0 45px;
+        }
+
+        .mission {
+            background: #111113;
+        }
+
+        .mission-content {
+            max-width: 900px;
+        }
+
+        .mission-content p {
+            color: #a1a1aa;
+            font-size: 22px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            padding: 35px;
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-8px);
+            border-color: #a3e635;
+        }
+
+        .feature-number {
+            color: #a3e635;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .feature h3 {
+            font-size: 24px;
+            margin: 20px 0 12px;
+        }
+
+        .feature p {
+            color: #a1a1aa;
+        }
+
+        .process {
+            background: #f4f4f5;
+            color: #18181b;
+        }
+
+        .process .section-label {
+            color: #4d7c0f;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .process-card {
+            padding: 35px;
+            background: white;
+            border-radius: 12px;
+        }
+
+        .process-card span {
+            font-size: 45px;
+            font-weight: bold;
+            color: #65a30d;
+        }
+
+        .process-card h3 {
+            margin: 15px 0 10px;
+            font-size: 24px;
+        }
+
+        .process-card p {
+            color: #52525b;
+        }
+
+        .cta {
+            text-align: center;
+            background:
+                linear-gradient(rgba(9, 9, 11, 0.88),
+                rgba(9, 9, 11, 0.88)),
+                url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+        }
+
+        .cta h2 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #d4d4d8;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        footer {
+            padding: 30px 8%;
+            text-align: center;
+            background: #050505;
+            color: #71717a;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        @media (max-width: 850px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .features,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .cta h2 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            Ekanex <span>Technologies</span>
+        </div>
+
+        <div>
+            <a href="#mission">Mission</a>
+            <a href="#solutions">Solutions</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="tag">
+                NEXT GENERATION
+            </span>
+
+            <h1>
+                Build.<br>
+                <span>Scale.</span><br>
+                Grow.
+            </h1>
+
+            <p>
+                A modern digital experience designed for ambitious
+                startups ready to turn bold ideas into meaningful
+                products and sustainable growth.
+            </p>
+
+            <a href="#contact" class="btn">
+                Start Building
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISSION -->
+
+    <section class="mission" id="mission">
+
+        <span class="section-label">
+            OUR MISSION
+        </span>
+
+        <h2 class="section-title">
+            Ideas deserve to become reality.
+        </h2>
+
+        <div class="mission-content">
+
+            <p>
+                We help forward-thinking businesses transform ideas
+                into digital experiences that are simple, powerful
+                and built for growth.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOLUTIONS -->
+
+    <section id="solutions">
+
+        <span class="section-label">
+            WHAT WE BUILD
+        </span>
+
+        <h2 class="section-title">
+            Designed For Growth.
+        </h2>
+
+        <div class="features">
+
+            <div class="feature">
+
+                <span class="feature-number">
+                    01 / PRODUCT
+                </span>
+
+                <h3>
+                    Digital Products
+                </h3>
+
+                <p>
+                    Create intuitive digital products that solve
+                    real problems and deliver meaningful experiences.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <span class="feature-number">
+                    02 / BRAND
+                </span>
+
+                <h3>
+                    Brand Experience
+                </h3>
+
+                <p>
+                    Build a strong identity that helps your startup
+                    stand out in a competitive digital world.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <span class="feature-number">
+                    03 / GROWTH
+                </span>
+
+                <h3>
+                    Growth Systems
+                </h3>
+
+                <p>
+                    Develop scalable digital systems designed to
+                    support your next stage of growth.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section class="process" id="process">
+
+        <span class="section-label">
+            HOW IT WORKS
+        </span>
+
+        <h2 class="section-title">
+            From Idea To Impact.
+        </h2>
+
+        <div class="process-grid">
+
+            <div class="process-card">
+
+                <span>01</span>
+
+                <h3>
+                    Discover
+                </h3>
+
+                <p>
+                    Understand the problem, audience and opportunity
+                    behind the idea.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <span>02</span>
+
+                <h3>
+                    Build
+                </h3>
+
+                <p>
+                    Turn the strategy into a clean, useful and
+                    engaging digital experience.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <span>03</span>
+
+                <h3>
+                    Grow
+                </h3>
+
+                <p>
+                    Improve, scale and continuously evolve the
+                    product based on real-world feedback.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta" id="contact">
+
+        <h2>
+            Let's Build What's Next.
+        </h2>
+
+        <p>
+            Have an idea that could change the way people do
+            something? Start building it today.
+        </p>
+
+        <a href="contact.html" class="btn">
+            Get Started
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 <strong>Ekanex Technologies</strong>.
+            Startup Landing Page Concept.
+        </p>
+
+    </footer>
+
+</body>
+</html>
