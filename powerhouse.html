@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>POWERHOUSE | Fitness & Gym</title>
+
+    <meta name="description"
+          content="POWERHOUSE is a modern fitness and gym website concept for gyms, trainers and fitness businesses.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0b0b0b;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #111111;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #292929;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #ff3b30;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff3b30;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            background:
+                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)),
+                url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero small {
+            color: #ff3b30;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 8vw, 100px);
+            line-height: 0.95;
+            margin: 20px 0;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .hero p {
+            color: #cccccc;
+            max-width: 550px;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ff3b30;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #111111;
+            transform: translateY(-3px);
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            margin-bottom: 45px;
+        }
+
+        .section-title small {
+            color: #ff3b30;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-size: 45px;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            background: #151515;
+        }
+
+        .stat {
+            padding: 35px;
+            text-align: center;
+            border: 1px solid #292929;
+        }
+
+        .stat h3 {
+            font-size: 40px;
+            color: #ff3b30;
+        }
+
+        .stat p {
+            color: #aaa;
+        }
+
+        /* PROGRAMS */
+
+        .programs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .program {
+            background: #151515;
+            padding: 35px;
+            border: 1px solid #292929;
+            transition: 0.3s;
+        }
+
+        .program:hover {
+            transform: translateY(-8px);
+            border-color: #ff3b30;
+        }
+
+        .program span {
+            color: #ff3b30;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .program h3 {
+            font-size: 25px;
+            margin: 15px 0;
+        }
+
+        .program p {
+            color: #aaa;
+        }
+
+        /* TRAINING */
+
+        .training {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .training-image {
+            min-height: 450px;
+            background:
+                linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45)),
+                url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1200&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .training-text h2 {
+            font-size: 48px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .training-text p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .training-text ul {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .training-text li {
+            margin: 12px 0;
+        }
+
+        .training-text li::before {
+            content: "✓";
+            color: #ff3b30;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* MEMBERSHIP */
+
+        .membership {
+            background: #151515;
+        }
+
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .plan {
+            background: #0d0d0d;
+            border: 1px solid #292929;
+            padding: 35px;
+            text-align: center;
+        }
+
+        .plan.featured {
+            border: 2px solid #ff3b30;
+        }
+
+        .plan h3 {
+            font-size: 25px;
+        }
+
+        .price {
+            font-size: 42px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .plan p {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+            background:
+                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+                url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1800&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cta h2 {
+            font-size: 55px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #080808;
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            border-top: 1px solid #222;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .stats,
+            .programs,
+            .plans {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .training {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .section-title h2 {
+                font-size: 35px;
+            }
+
+            .stats,
+            .programs,
+            .plans {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            POWER<span>HOUSE</span>
+        </div>
+
+        <ul>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#training">Training</a></li>
+            <li><a href="#membership">Membership</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <small>FITNESS & WELLNESS</small>
+
+            <h1>
+                Train<br>
+                Stronger.
+            </h1>
+
+            <p>
+                A modern fitness experience designed for people
+                who want to become stronger, healthier and better
+                every day.
+            </p>
+
+            <a href="#membership" class="btn">
+                JOIN POWERHOUSE
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat">
+            <h3>24/7</h3>
+            <p>Gym Access</p>
+        </div>
+
+        <div class="stat">
+            <h3>50+</h3>
+            <p>Training Programs</p>
+        </div>
+
+        <div class="stat">
+            <h3>15+</h3>
+            <p>Expert Trainers</p>
+        </div>
+
+        <div class="stat">
+            <h3>5K+</h3>
+            <p>Members</p>
+        </div>
+
+    </section>
+
+
+    <!-- PROGRAMS -->
+
+    <section id="programs">
+
+        <div class="section-title">
+
+            <small>WHAT WE OFFER</small>
+
+            <h2>Training Programs</h2>
+
+        </div>
+
+        <div class="programs">
+
+            <div class="program">
+
+                <span>01</span>
+
+                <h3>Strength Training</h3>
+
+                <p>
+                    Build strength with structured workouts
+                    designed for progressive improvement.
+                </p>
+
+            </div>
+
+
+            <div class="program">
+
+                <span>02</span>
+
+                <h3>Functional Fitness</h3>
+
+                <p>
+                    Improve movement, flexibility and everyday
+                    physical performance.
+                </p>
+
+            </div>
+
+
+            <div class="program">
+
+                <span>03</span>
+
+                <h3>Personal Training</h3>
+
+                <p>
+                    Work directly with experienced trainers
+                    and follow a personalized fitness plan.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRAINING -->
+
+    <section id="training">
+
+        <div class="training">
+
+            <div class="training-image"></div>
+
+            <div class="training-text">
+
+                <h2>
+                    Built For<br>
+                    Progress.
+                </h2>
+
+                <p>
+                    POWERHOUSE combines modern equipment,
+                    expert guidance and a motivating environment
+                    to create a complete fitness experience.
+                </p>
+
+                <ul>
+                    <li>Premium Training Equipment</li>
+                    <li>Certified Fitness Trainers</li>
+                    <li>Personalized Workout Plans</li>
+                    <li>Modern Training Environment</li>
+                    <li>Community & Group Classes</li>
+                </ul>
+
+                <a href="contact.html" class="btn">
+                    TALK TO A TRAINER
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MEMBERSHIP -->
+
+    <section id="membership" class="membership">
+
+        <div class="section-title">
+
+            <small>MEMBERSHIP</small>
+
+            <h2>Choose Your Plan</h2>
+
+        </div>
+
+        <div class="plans">
+
+            <div class="plan">
+
+                <h3>STARTER</h3>
+
+                <div class="price">
+                    ₹999 <span>/ month</span>
+                </div>
+
+                <p>
+                    Gym access and basic equipment.
+                </p>
+
+                <a href="contact.html" class="btn">
+                    GET STARTED
+                </a>
+
+            </div>
+
+
+            <div class="plan featured">
+
+                <h3>POWER</h3>
+
+                <div class="price">
+                    ₹1,999 <span>/ month</span>
+                </div>
+
+                <p>
+                    Full gym access plus group training
+                    and fitness programs.
+                </p>
+
+                <a href="contact.html" class="btn">
+                    JOIN NOW
+                </a>
+
+            </div>
+
+
+            <div class="plan">
+
+                <h3>ELITE</h3>
+
+                <div class="price">
+                    ₹3,499 <span>/ month</span>
+                </div>
+
+                <p>
+                    Premium access with personal training
+                    and customized programs.
+                </p>
+
+                <a href="contact.html" class="btn">
+                    GO ELITE
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>
+            Your Strongest<br>
+            Version Starts Here.
+        </h2>
+
+        <p>
+            Train stronger. Live better. Become POWERHOUSE.
+        </p>
+
+        <a href="contact.html" class="btn">
+            START YOUR JOURNEY
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            POWERHOUSE — Fitness & Gym Website Demo
+        </p>
+
+        <p>
+            Created by <strong>Ekanex Technologies</strong>
+        </p>
+
+        <p>
+            © 2026 Ekanex Technologies
+        </p>
+
+    </footer>
+
+</body>
+</html>
