@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Your Dream Home | Real Estate</title>
+
+    <meta name="description"
+          content="Find Your Dream Home is a modern real estate website concept for discovering premium properties and connecting with property experts.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f7f5f0;
+            color: #20231f;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e4e0d8;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #8b6f47;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #20231f;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #8b6f47;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            background:
+                linear-gradient(rgba(20,20,20,0.45), rgba(20,20,20,0.6)),
+                url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80");
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero small {
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 85px);
+            line-height: 1;
+            margin: 20px 0;
+        }
+
+        .hero p {
+            max-width: 570px;
+            font-size: 18px;
+            color: #eeeeee;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 28px;
+            background: #8b6f47;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #20231f;
+            transform: translateY(-3px);
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            margin-bottom: 45px;
+        }
+
+        .section-title small {
+            color: #8b6f47;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-size: 45px;
+            margin-top: 8px;
+        }
+
+        /* SEARCH */
+
+        .search-box {
+            margin-top: -45px;
+            position: relative;
+            z-index: 5;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) auto;
+            gap: 15px;
+        }
+
+        .search-box input,
+        .search-box select {
+            padding: 16px;
+            border: 1px solid #ddd8cf;
+            background: #faf9f6;
+            outline: none;
+        }
+
+        .search-box button {
+            border: none;
+            padding: 16px 25px;
+            background: #20231f;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .search-box button:hover {
+            background: #8b6f47;
+        }
+
+        /* PROPERTIES */
+
+        .properties {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .property {
+            background: white;
+            border: 1px solid #e4e0d8;
+            transition: 0.3s;
+        }
+
+        .property:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .property-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .property-1 {
+            background-image: url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=80");
+        }
+
+        .property-2 {
+            background-image: url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80");
+        }
+
+        .property-3 {
+            background-image: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80");
+        }
+
+        .property-content {
+            padding: 25px;
+        }
+
+        .property-content small {
+            color: #8b6f47;
+            font-weight: bold;
+        }
+
+        .property-content h3 {
+            font-size: 23px;
+            margin: 8px 0;
+        }
+
+        .property-content p {
+            color: #777;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* WHY US */
+
+        .why-us {
+            background: #20231f;
+            color: white;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            padding: 35px;
+            border: 1px solid #44483f;
+        }
+
+        .feature span {
+            color: #c5a77a;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .feature h3 {
+            margin: 15px 0;
+            font-size: 23px;
+        }
+
+        .feature p {
+            color: #c5c5c5;
+        }
+
+        /* ABOUT */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 450px;
+            background:
+                url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-text h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+            background:
+                linear-gradient(rgba(20,20,20,0.65), rgba(20,20,20,0.75)),
+                url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=80");
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #151713;
+            color: #999;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .search-box {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .properties,
+            .features {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .section-title h2,
+            .about-text h2 {
+                font-size: 35px;
+            }
+
+            .search-box,
+            .properties,
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            DREAM<span>HOME</span>
+        </div>
+
+        <ul>
+            <li><a href="#properties">Properties</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <small>PREMIUM PROPERTIES</small>
+
+            <h1>
+                Find Your<br>
+                Dream Home.
+            </h1>
+
+            <p>
+                Discover beautiful properties in exceptional
+                locations and find a place that feels like home.
+            </p>
+
+            <a href="#properties" class="btn">
+                EXPLORE PROPERTIES
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input type="text" placeholder="Location">
+
+        <select>
+            <option>Property Type</option>
+            <option>Apartment</option>
+            <option>Villa</option>
+            <option>House</option>
+        </select>
+
+        <select>
+            <option>Price Range</option>
+            <option>Under ₹50 Lakh</option>
+            <option>₹50 Lakh - ₹1 Crore</option>
+            <option>Above ₹1 Crore</option>
+        </select>
+
+        <button type="button">
+            SEARCH
+        </button>
+
+    </div>
+
+
+    <!-- PROPERTIES -->
+
+    <section id="properties">
+
+        <div class="section-title">
+
+            <small>FEATURED LISTINGS</small>
+
+            <h2>Exceptional Properties</h2>
+
+        </div>
+
+        <div class="properties">
+
+            <div class="property">
+
+                <div class="property-image property-1"></div>
+
+                <div class="property-content">
+
+                    <small>LUXURY VILLA</small>
+
+                    <h3>Modern Hillside Villa</h3>
+
+                    <p>
+                        4 Bedrooms · 4 Bathrooms · 3,200 sq.ft.
+                    </p>
+
+                    <div class="price">
+                        ₹2.45 Crore
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="property">
+
+                <div class="property-image property-2"></div>
+
+                <div class="property-content">
+
+                    <small>PREMIUM APARTMENT</small>
+
+                    <h3>Urban Residence</h3>
+
+                    <p>
+                        3 Bedrooms · 3 Bathrooms · 2,100 sq.ft.
+                    </p>
+
+                    <div class="price">
+                        ₹1.35 Crore
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="property">
+
+                <div class="property-image property-3"></div>
+
+                <div class="property-content">
+
+                    <small>CONTEMPORARY HOME</small>
+
+                    <h3>Garden Family Home</h3>
+
+                    <p>
+                        4 Bedrooms · 3 Bathrooms · 2,700 sq.ft.
+                    </p>
+
+                    <div class="price">
+                        ₹1.85 Crore
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY US -->
+
+    <section id="why-us" class="why-us">
+
+        <div class="section-title">
+
+            <small>THE DREAMHOME DIFFERENCE</small>
+
+            <h2>Why Choose Us?</h2>
+
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+
+                <span>01</span>
+
+                <h3>Verified Properties</h3>
+
+                <p>
+                    Explore carefully selected properties
+                    with reliable listing information.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <span>02</span>
+
+                <h3>Expert Guidance</h3>
+
+                <p>
+                    Get professional assistance throughout
+                    your property search and decision process.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <span>03</span>
+
+                <h3>Simple Experience</h3>
+
+                <p>
+                    Search, compare and discover properties
+                    through a clean and modern experience.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="about">
+
+            <div class="about-image"></div>
+
+            <div class="about-text">
+
+                <small style="color:#8b6f47; letter-spacing:3px;">
+                    ABOUT DREAMHOME
+                </small>
+
+                <h2>
+                    More Than<br>
+                    Just A Property.
+                </h2>
+
+                <p>
+                    Finding a home is about finding a place
+                    where your next chapter begins.
+                </p>
+
+                <p>
+                    This real estate website concept combines
+                    elegant design, property discovery and
+                    lead generation into one modern experience.
+                </p>
+
+                <a href="contact.html" class="btn">
+                    CONTACT AN EXPERT
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>
+            Your Dream Home<br>
+            Is Waiting.
+        </h2>
+
+        <p>
+            Let's find the perfect place for your next chapter.
+        </p>
+
+        <a href="contact.html" class="btn">
+            GET IN TOUCH
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            DREAMHOME — Real Estate Website Demo
+        </p>
+
+        <p>
+            Created by <strong>Ekanex Technologies</strong>
+        </p>
+
+        <p>
+            © 2026 Ekanex Technologies
+        </p>
+
+    </footer>
+
+</body>
+</html>
